@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+
+import rospy
+import geometry_msgs.msg 
+
+def huskyOdomCallback(message,cargs):
+    pub,msg,goal = cargs
+    # Publish
+    msg.Linear.X = v
+    msg.Angluar.Z =w
+    
+# Set waypoint for Husky to drive to
+goal = [8,8];  # Goal position in x/y
+
+# Setup publisher
+cmdmsg = geometry_msgs.msg.Twist
+cmdpub = rospy.Publisher('/cmd_vel',cmdmsg, queue_size=10)
+
+
+rospy.init_node('nre_simhuskycontrol',anonymous=True)
+rospy.Subscriber('/odom',geometry_msgs.Pose,huskyOdomCallback, 
+                 (cmdpub,cmdmsg,goal))

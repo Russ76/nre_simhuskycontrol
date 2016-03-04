@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>nre_huskycontrol</name>
+  <name>nre_simhuskycontrol</name>
   <version>0.0.0</version>
-  <description>The nre_huskycontrol package</description>
+  <description>The nre_simhuskycontrol package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->
@@ -40,22 +40,12 @@
   <!-- Use test_depend for packages you need only for testing: -->
   <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>husky_control</build_depend>
-  <build_depend>husky_description</build_depend>
-  <build_depend>husky_desktop</build_depend>
-  <build_depend>husky_gazebo</build_depend>
-  <build_depend>husky_msgs</build_depend>
-  <build_depend>husky_navigation</build_depend>
-  <build_depend>husky_navigation</build_depend>
-  <build_depend>husky_simulator</build_depend>
-  <build_depend>husky_viz</build_depend>
   <run_depend>husky_control</run_depend>
   <run_depend>husky_description</run_depend>
-  <run_depend>husky_desktop</run_depend>
   <run_depend>husky_gazebo</run_depend>
   <run_depend>husky_msgs</run_depend>
   <run_depend>husky_navigation</run_depend>
-  <run_depend>husky_simulator</run_depend>
+  <run_depend>husky_gazebo</run_depend>
   <run_depend>husky_viz</run_depend>
 
 
