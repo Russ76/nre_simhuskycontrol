@@ -85,7 +85,10 @@ A launch file for setting up control of a Husky.
 <!--******************************-->
 <!-- Debugging tools -->
 <!--******************************-->
+<!--
 <node name="rviz" pkg="rviz" type="rviz" args="-d $(find husky_viz)/rviz/robot.rviz" output="screen"/>
+-->
+<node name="rviz" pkg="rviz" type="rviz" args="-d $(find nre_simhuskycontrol)/rviz/husky_maker.rviz" output="screen"/>
 <node name="rqt_topic" pkg="rqt_topic" type="rqt_topic" output="screen" />
 <node name="rqt_graph" pkg="rqt_graph" type="rqt_graph" output="screen" />
 

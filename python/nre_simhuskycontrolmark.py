@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import rospy, tf
-import geometry_msgs.msg, nav_msgs.msg
+import geometry_msgs.msg, nav_msgs.msg, visualization_msgs.msg
 from math import *
 from time import sleep
 
@@ -43,7 +43,7 @@ def huskyOdomCallback(message,cargs):
     pub.publish(msg)
     
     # Reporting
-    print('huskyOdomCallback: x=%4.1f,y=%4.1f dist=%4.2f, cmd.v=%4.2f, cmd.w=%4.2f'%(pose[0],pose[1],distance,v,w))
+    print('huskyOdomCallback: x=%4.1f,y=%4.1f dist=%4.2f, cmd.v=%4.2f, cmd.w=%4.2f\n'%(pose[0],pose[1],distance,v,w))
 
 ########################################
 # Main Script
@@ -56,6 +56,12 @@ goal = [10,10]  # Goal position in x/y
 # Optional bit to place a marker at the goal
 import pubmarker as pm
 pm.mark(goal,frame_id="/odom")
+mpub = rospy.Publisher('visualization_marker',
+                      visualization_msgs.msg.Marker,queue_size=10)
+mpub.publish(pm.mark([5.0,5.0],frame_id="/odom"))
+mpub.publish(pm.mark([5.0,5.0],frame_id="/odom"))
+sleep(2)
+mpub.publish(pm.mark([5.0,5.0],frame_id="/odom"))
 
 # Setup publisher
 cmdmsg = geometry_msgs.msg.Twist()
