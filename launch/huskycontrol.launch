@@ -34,6 +34,14 @@ A launch file for setting up control of a Husky.
 <!--******************************-->
 <!-- Husky: control and estimation -->
 <!--******************************-->
+ <!-- Run the map server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find nre_simhuskycontrol)/map/blank_map.yaml">
+    <param name="frame_id" value="/map" />
+  </node>
+  <!--- Run AMCL -->
+  <include file="$(find amcl)/examples/amcl_diff.launch" />
+
+
 <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
 <rosparam command="load" file="$(find husky_control)/config/control.yaml" />
