@@ -47,7 +47,7 @@
   <run_depend>husky_navigation</run_depend>
   <run_depend>husky_gazebo</run_depend>
   <run_depend>husky_viz</run_depend>
-
+  <run_depend>teleop-twist-keyboard</run_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
